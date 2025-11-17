@@ -89,6 +89,7 @@
         #exportXlsx {
             background: #7a5e2c;
             color: white;
+            margin-bottom: 0;
         }
 
         small {
@@ -103,6 +104,7 @@
             background: rgba(0, 0, 0, 0.3);
             padding: 12px;
             white-space: pre-wrap;
+            word-wrap: break-word;
             max-height: 150px;
             overflow-y: auto;
             border-radius: 6px;
@@ -129,6 +131,24 @@
             background: #00d4ff;
         }
 
+        pre#output.success {
+            background: rgba(40, 167, 69, 0.2);
+            /* Nền xanh lá mờ */
+            border-left: 4px solid #28a745;
+            color: #ffffff;
+            /* Chữ xanh lá nhạt */
+            font-size: 12px;
+        }
+
+        pre#output.error {
+            background: rgba(215, 58, 73, 0.2);
+            /* Nền đỏ mờ */
+            border-left: 4px solid #d73a49;
+            color: #ffb8bf;
+            /* Chữ đỏ nhạt */
+            font-size: 12px;
+        }
+
         .divider {
             height: 1px;
             background: linear-gradient(90deg, transparent, #0f3460, transparent);
@@ -138,7 +158,7 @@
 </head>
 
 <body>
-    <button id="btn">🔍 Lấy dữ liệu từ trang</button>
+    <button id="btn">🔍 Lấy dữ liệu học phần</button>
 
     <div class="divider"></div>
 
@@ -152,7 +172,7 @@
 
     <div class="section">
         <div class="section-title">Xuất file</div>
-        <button id="exportImportable">📄 Tải định dạng @@@###</button>
+        <button id="exportImportable">📄 Tải file Tương thích (.txt)</button>
         <button id="exportXlsx">📊 Xuất Excel (.xlsx)</button>
     </div>
 
