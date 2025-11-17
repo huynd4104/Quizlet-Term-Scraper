@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Quizlet Scraper</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            width: 340px;
+            padding: 20px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e4e4e4;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #0f3460;
+        }
+
+        .header h2 {
+            color: #00d4ff;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            color: #8b8b8b;
+            font-size: 12px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: opacity 0.2s ease;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        #btn {
+            background: #4a5568;
+            color: white;
+        }
+
+        .section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(15, 52, 96, 0.3);
+            border-radius: 10px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .section-title {
+            color: #00d4ff;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        #copyImport {
+            background: #2d7a5e;
+            color: white;
+        }
+
+        #exportImportable {
+            background: #2c5f7a;
+            color: white;
+        }
+
+        #exportXlsx {
+            background: #7a5e2c;
+            color: white;
+        }
+
+        small {
+            display: block;
+            margin-top: 8px;
+            color: #a0a0a0;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+
+        pre {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 12px;
+            white-space: pre-wrap;
+            max-height: 150px;
+            overflow-y: auto;
+            border-radius: 6px;
+            font-size: 11px;
+            color: #b8b8b8;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        pre::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        pre::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 3px;
+        }
+
+        pre::-webkit-scrollbar-thumb {
+            background: #0f3460;
+            border-radius: 3px;
+        }
+
+        pre::-webkit-scrollbar-thumb:hover {
+            background: #00d4ff;
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #0f3460, transparent);
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">🔍 Lấy dữ liệu từ trang</button>
+
+    <div class="divider"></div>
+
+    <div class="section">
+        <div class="section-title">Import trực tiếp</div>
+        <button id="copyImport">📋 Copy để Import</button>
+        <small>
+            Copy dữ liệu và paste trực tiếp vào trang "Tạo học phần" của Quizlet
+        </small>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Xuất file</div>
+        <button id="exportImportable">📄 Tải định dạng @@@###</button>
+        <button id="exportXlsx">📊 Xuất Excel (.xlsx)</button>
+    </div>
+
+    <pre id="output"></pre>
+
+    <script src="xlsx.full.min.js"></script>
+    <script src="popup.js"></script>
+</body>
+
+</html>

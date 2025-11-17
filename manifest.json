@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "Quizlet Term Scraper",
+    "version": "1.0",
+    "description": "Lấy danh sách thuật ngữ học phần từ Quizlet.",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "clipboardWrite"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_title": "Quizlet Scraper"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://quizlet.com/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
+}
